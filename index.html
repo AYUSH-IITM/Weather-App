@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+    <div>
+        <button onclick="setBackgroundVideo('Clear')">Clear</button>
+        <button onclick="setBackgroundVideo('Thunder')">Thunder</button>
+        <button onclick="setBackgroundVideo('Snow')">Snow</button>
+        <button onclick="setBackgroundVideo('Overcast Clouds')">Overcast</button>
+        <button onclick="setBackgroundVideo('Windy')">Windy</button>
+        <button onclick="setBackgroundVideo('Light Rain')">Rain</button>
+        <button onclick="setBackgroundVideo('Unknown')">Unknown</button> <!-- for default -->
+    </div>
+
+    <video id="background-video" autoplay loop muted>
+        <source id="video-source" src="assets/videos/background.mp4/Scattered_cloud.MP4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h1>My Location</h1>
+    <div class="container">
+        <section class="weather-input">
+            <input class="city-input" type="text" placeholder="E.g., New York, London, Tokyo" aria-label="City Name">
+            <button class="search-btn" aria-label="Search for weather">Search</button>
+            <div class="separator"></div>
+            <button class="location-btn" aria-label="Use current location">Use Current Location</button>
+        </section>
+
+        <section class="weather-data">
+            <div class="current-weather">
+                <div class="details">
+                    <h2>_______ ( ______ )</h2>
+                    <h6>Temperature: __°C</h6>
+                    <h6>Wind: __ M/S</h6>
+                    <h6>Humidity: __%</h6>
+                </div>
+                <div class="icon">
+                    <img src="" alt="weather icon" />
+                    <h6>___________</h6>
+                </div>
+            </div>
+            <div class="days-forecast">
+                <h2>5-Day Forecast</h2>
+                <ul class="weather-cards">
+                    <li class="card">
+                        <h3>( ______ )</h3>
+                        <h6>Temp: __°C</h6>
+                        <h6>Wind: __ M/S</h6>
+                        <h6>Humidity: __%</h6>
+                    </li>
+                </ul>
+            </div>
+            <div class="error-message" style="display: none; color: red;">
+                <p>An error occurred while fetching the weather data. Please try again.</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>
